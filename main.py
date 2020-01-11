@@ -86,8 +86,7 @@ for person in all_persons:
     client = boto3.client(
         "sns",
         aws_access_key_id=aws_keys.AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=aws_keys.AWS_SECRET_ACCESS_KEY,
-        region_name='us-east-1'
+        aws_secret_access_key=aws_keys.AWS_SECRET_ACCESS_KEY
     )
 
     # Send sms message.
