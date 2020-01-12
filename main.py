@@ -35,8 +35,8 @@ tyler_positions = [
 # Create list containing all people
 all_persons = [
     david_positions,
-    # keith_positions,
-    # tyler_positions
+    keith_positions,
+    tyler_positions
 ]
 
 # For each person in the all_persons list
