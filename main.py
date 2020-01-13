@@ -23,6 +23,14 @@ keith_positions = [
     Position(ticker='NOK', call=True, strike_price=4, breakeven_price=4.08),
 ]
 
+mason_positions = [
+    '+18284558967',
+    Position(ticker='BAC', call=True, strike_price=35, breakeven_price=35.42),
+    Position(ticker='SPXL', call=True, strike_price=70, breakeven_price=70.40),
+    Position(ticker='F', call=True, strike_price=9.5, breakeven_price=9.55),
+    Position(ticker='ACB', call=False, strike_price=1.5, breakeven_price=1.46),
+]
+
 tyler_positions = [
     '+17044952493',
     Position(ticker='MSFT', call=True, strike_price=162.5, breakeven_price=163.35),
@@ -36,6 +44,7 @@ tyler_positions = [
 all_persons = [
     david_positions,
     keith_positions,
+    mason_positions,
     tyler_positions
 ]
 
