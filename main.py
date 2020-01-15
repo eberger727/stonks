@@ -3,9 +3,9 @@ import boto3
 from datetime import date
 
 phone_numbers = [
-    # "+17044952493", #Tyler
-    # "+18284558967", #Mason
-    # "+19196021971", #Keith
+     "+17044952493", #Tyler
+     "+18284558967", #Mason
+     "+19196021971", #Keith
     "+18282449366", #David
 ]
 
