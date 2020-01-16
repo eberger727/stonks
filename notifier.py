@@ -60,7 +60,7 @@ for person in all_persons:
         is_itm = False
 
         # Get current price of stock
-        if socket.gethostname == 'stonks':
+        if socket.gethostname() == 'stonks':
             current_price = int(yf.Ticker(stonk.ticker).info['ask']['raw'])
         else:
             current_price = int(yf.Ticker(stonk.ticker).info['ask'])
@@ -101,7 +101,7 @@ for person in all_persons:
         aws_secret_access_key=aws_keys.AWS_SECRET_ACCESS_KEY,
         region_name="us-west-2"
     )
-    
+
     # Send sms message.
     response = client.publish(
         PhoneNumber=person[0],
