@@ -25,10 +25,10 @@ keith_positions = [
 
 mason_positions = [
     "+18284558967",
-    Position(ticker='BAC', call=True, strike_price=35, breakeven_price=35.42),
-    Position(ticker='SPXL', call=True, strike_price=70, breakeven_price=70.40),
+    Position(ticker='AMD', call=True, strike_price=52, breakeven_price=53.03),
+    Position(ticker='GE', call=True, strike_price=12, breakeven_price=12.07),
+    Position(ticker='CFG', call=True, strike_price=42.5, breakeven_price=42.55),
     Position(ticker='F', call=True, strike_price=9.5, breakeven_price=9.55),
-    Position(ticker='ACB', call=False, strike_price=1.5, breakeven_price=1.46),
 ]
 
 tyler_positions = [
@@ -42,10 +42,10 @@ tyler_positions = [
 
 # Create list containing all people
 all_persons = [
-    david_positions,
-    keith_positions,
+    # david_positions,
+    # keith_positions,
     mason_positions,
-    tyler_positions
+    # tyler_positions
 ]
 
 # For each person in the all_persons list
@@ -99,13 +99,11 @@ for person in all_persons:
         "sns",
         aws_access_key_id=aws_keys.AWS_ACCESS_KEY_ID,
         aws_secret_access_key=aws_keys.AWS_SECRET_ACCESS_KEY,
-        region_name="us-east-1"
+        region_name="us-west-2"
     )
-    print(final_text)
+    
     # Send sms message.
     response = client.publish(
-        PhoneNumber="+18282449366",
-        Message='t'
+        PhoneNumber=person[0],
+        Message=final_text
     )
-
-    print(response)
