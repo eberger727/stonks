@@ -52,7 +52,7 @@ tyler_positions = [
 all_persons = [
     david_positions,
     # keith_positions,
-    mason_positions,
+    # mason_positions,
     # tyler_positions
 ]
 
@@ -109,7 +109,7 @@ for person in all_persons:
         aws_secret_access_key=aws_keys.AWS_SECRET_ACCESS_KEY,
         region_name="us-west-2"
     )
-
+    print(final_text)
     # Send sms message.
     response = client.publish(
         PhoneNumber=person[0],
