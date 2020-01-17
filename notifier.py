@@ -115,3 +115,4 @@ for person in all_persons:
         PhoneNumber=person[0],
         Message=final_text
     )
+    print(response)
