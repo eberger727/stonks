@@ -19,9 +19,9 @@ david_positions = [
     Position(ticker='AAPL', call=True, strike_price=317.5, breakeven_price=322.3),
     Position(ticker='BABA', call=True, strike_price=230, breakeven_price=233.75),
     Position(ticker='NVDA', call=True, strike_price=250, breakeven_price=255.1),
-    Position(ticker='AAPL', call=True, strike_price=330, breakeven_price=334.1),
-    Position(ticker='SPCE', call=True, strike_price=20, breakeven_price=20.5),
-    Position(ticker='TSLA', call=True, strike_price=690, breakeven_price=699.15),
+    # Position(ticker='AAPL', call=True, strike_price=330, breakeven_price=334.1),
+    # Position(ticker='SPCE', call=True, strike_price=20, breakeven_price=20.5),
+    # Position(ticker='TSLA', call=True, strike_price=690, breakeven_price=699.15),
 ]
 
 keith_positions = [
@@ -52,7 +52,7 @@ tyler_positions = [
 all_persons = [
     david_positions,
     # keith_positions,
-    # mason_positions,
+    mason_positions,
     # tyler_positions
 ]
 
@@ -78,7 +78,7 @@ for person in all_persons:
             need_to_breakeven = stonk.breakeven_price - current_price
         else:
         # If a put, want current price to be below breakeven price
-            need_to_breakeven = current_price - int(stonk.breakeven_price)
+            need_to_breakeven = current_price - stonk.breakeven_price
         
         # If has broken even
         if need_to_breakeven < 0:
@@ -87,16 +87,16 @@ for person in all_persons:
         # Name of stock
         stonk_msg = '%s: %s' % (stonk.ticker, 'CALL' if stonk.call else 'PUT')
         # Current price of stock
-        stonk_msg = stonk_msg + '\n\tCurrent Price: $%s' % str(round(current_price, 2))
+        stonk_msg = stonk_msg + '\n\tCurrent Price: $%.2f' % (current_price)
         # Break even price to meet
-        stonk_msg = stonk_msg + '\n\tBreak-Even: $%s' % str(round(stonk.breakeven_price, 2))
+        stonk_msg = stonk_msg + '\n\tBreak-Even: $%.2f' % (stonk.breakeven_price)
 
         # If in the money
         if is_itm:
-            stonk_msg = stonk_msg + '\n\tITM by: $%s\n' % str(round(need_to_breakeven*-1, 2))
+            stonk_msg = stonk_msg + '\n\tITM by: $%.2f\n' % (need_to_breakeven*-1)
         else:
         # If out of the money
-            stonk_msg = stonk_msg + '\n\tOTM by: $%s\n' % str(round(need_to_breakeven*-1, 2))
+            stonk_msg = stonk_msg + '\n\tOTM by: $%.2f\n' % (need_to_breakeven*-1)
 
         final_text = final_text + stonk_msg
 
