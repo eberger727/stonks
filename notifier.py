@@ -11,10 +11,17 @@ from yahoo_fin import stock_info as si
 # Define week positions
 david_positions = [
     "+18282449366",
-    Position(ticker='AAPL', call=True, strike_price=310, breakeven_price=314.25),
-    Position(ticker='LK', call=True, strike_price=44, breakeven_price=45.9),
+    Position(ticker='TSLA', call=True, strike_price=575, breakeven_price=580.25),
+    Position(ticker='FB', call=True, strike_price=222.5, breakeven_price=222.99),
+    Position(ticker='BYND', call=True, strike_price=133, breakeven_price=140),
+    Position(ticker='TSLA', call=True, strike_price=600, breakeven_price=602.34),
     Position(ticker='TSLA', call=True, strike_price=595, breakeven_price=599.2),
     Position(ticker='AAPL', call=True, strike_price=317.5, breakeven_price=322.3),
+    Position(ticker='BABA', call=True, strike_price=230, breakeven_price=233.75),
+    Position(ticker='NVDA', call=True, strike_price=250, breakeven_price=255.1),
+    Position(ticker='AAPL', call=True, strike_price=330, breakeven_price=334.1),
+    Position(ticker='SPCE', call=True, strike_price=20, breakeven_price=20.5),
+    Position(ticker='TSLA', call=True, strike_price=690, breakeven_price=699.15),
 ]
 
 keith_positions = [
@@ -43,9 +50,9 @@ tyler_positions = [
 
 # Create list containing all people
 all_persons = [
-    # david_positions,
+    david_positions,
     # keith_positions,
-    mason_positions,
+    # mason_positions,
     # tyler_positions
 ]
 
