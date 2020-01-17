@@ -52,7 +52,7 @@ tyler_positions = [
 all_persons = [
     david_positions,
     # keith_positions,
-    # mason_positions,
+    mason_positions,
     # tyler_positions
 ]
 
