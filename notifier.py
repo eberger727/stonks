@@ -6,6 +6,7 @@ import json
 import socket
 import sys
 import yfinance as yf
+from yahoo_fin import stock_info as si
 
 # Define week positions
 david_positions = [
@@ -61,9 +62,9 @@ for person in all_persons:
 
         # Get current price of stock
         if socket.gethostname() == 'stonks':
-            current_price = int(yf.Ticker(stonk.ticker).info['ask']['raw'])
+            current_price = int(si.get_live_price(stonk.ticker))
         else:
-            current_price = int(yf.Ticker(stonk.ticker).info['ask'])
+            current_price = int(si.get_live_price(stonk.ticker))
 
         # If a call, want current price to be above breakeven price
         if stonk.call:
