@@ -69,9 +69,9 @@ for person in all_persons:
 
         # Get current price of stock
         if socket.gethostname() == 'stonks':
-            current_price = int(si.get_live_price(stonk.ticker))
+            current_price = si.get_live_price(stonk.ticker)
         else:
-            current_price = int(si.get_live_price(stonk.ticker))
+            current_price = si.get_live_price(stonk.ticker)
 
         # If a call, want current price to be above breakeven price
         if stonk.call:
