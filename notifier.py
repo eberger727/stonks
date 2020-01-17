@@ -87,16 +87,16 @@ for person in all_persons:
         # Name of stock
         stonk_msg = '%s: %s' % (stonk.ticker, 'CALL' if stonk.call else 'PUT')
         # Current price of stock
-        stonk_msg = stonk_msg + '\n\tCurrent Price: $%f' % str(round(current_price, 2))
+        stonk_msg = stonk_msg + '\n\tCurrent Price: $%s' % str(round(current_price, 2))
         # Break even price to meet
-        stonk_msg = stonk_msg + '\n\tBreak-Even: $%.2f' % str(round(stonk.breakeven_price, 2))
+        stonk_msg = stonk_msg + '\n\tBreak-Even: $%s' % str(round(stonk.breakeven_price, 2))
 
         # If in the money
         if is_itm:
-            stonk_msg = stonk_msg + '\n\tITM by: $%.2f\n' % str(round(need_to_breakeven*-1, 2))
+            stonk_msg = stonk_msg + '\n\tITM by: $%s\n' % str(round(need_to_breakeven*-1, 2))
         else:
         # If out of the money
-            stonk_msg = stonk_msg + '\n\tOTM by: $%.2f\n' % str(round(need_to_breakeven*-1, 2))
+            stonk_msg = stonk_msg + '\n\tOTM by: $%s\n' % str(round(need_to_breakeven*-1, 2))
 
         final_text = final_text + stonk_msg
 
